@@ -47,13 +47,13 @@ public class MainPage {
     }
 
 
-    public void scrollToImportantQuestions() {
+    public void scrollToImportantQuestions() { //прокручиваем страницу до Вопросов о важном
         WebElement element = driver.findElement(By.xpath(IMPORTANT_QUESTIONS));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
     }
 
 
-    public String checkImportantQuestion(String question) {
+    public String checkImportantQuestion(String question) { //Проверяем, что кликая на вопрос, открывается текст ответа
         scrollToImportantQuestions();
         if (driver.findElement(By.id(QUESTION1)).getText().equals(question)) {
             driver.findElement(By.id(QUESTION1)).click();
