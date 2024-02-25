@@ -56,7 +56,8 @@ public class OrderPage {
         ));
     }
 
-    public void inputPersonalInformation(String name, String surname, String address, String station, String phoneNumber) {
+    public void inputPersonalInformation(String name, String surname, String address,
+                                         String station, String phoneNumber) { //вводим данные зааказчика
         driver.findElement(NAME).sendKeys(name);
         driver.findElement(SURNAME).sendKeys(surname);
         driver.findElement(ADDRESS).sendKeys(address);
@@ -66,7 +67,7 @@ public class OrderPage {
         pressNext();
     }
 
-    public void inputAdditionalInformation(String date, String comment) {
+    public void inputAdditionalInformation(String date, String comment) { //вводим доп инфу
         driver.findElement(orderTime).sendKeys(date, Keys.ENTER);
         driver.findElement(orderRentalPeriod).click();
         driver.findElement(orderRentalTwoDay).click();

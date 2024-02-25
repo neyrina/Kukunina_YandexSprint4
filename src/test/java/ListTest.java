@@ -57,7 +57,7 @@ public class ListTest {
     }
 
     @Test
-    public void testImportantQuestionsList() {
+    public void testImportantQuestionsList() { //открываем сайт и проверяем Вопросы о важном
         MainPage mainPage = new MainPage(driver);
         mainPage.openUrl();
         mainPage.clickButtonCookies();

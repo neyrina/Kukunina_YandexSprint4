@@ -55,14 +55,14 @@ public class OrderTest {
     }
 
     @Test
-    public void testOrder() {
+    public void testOrder() { //проверка заказа самоката
         MainPage mainPage = new MainPage(driver);
         mainPage.openUrl();
         mainPage.clickOrderButton(isOrderButton);//true - верхняя кнопка заказа, false - нижняя
         OrderPage orderPage = new OrderPage(driver);
         orderPage.waitForLoadOrderPage();
-        orderPage.inputPersonalInformation(name, surname, address, station, phoneNumber);
-        orderPage.inputAdditionalInformation(date, comment);
+        orderPage.inputPersonalInformation(name, surname, address, station, phoneNumber); //вводим инфо о заказчике
+        orderPage.inputAdditionalInformation(date, comment); //вводим доп инфу о заказе
         boolean isDisplayed = orderPage.checkOrderConfirmationIsDisplayed();
         Assert.assertTrue("Подтверждение заказа не отображается", isDisplayed);
 
